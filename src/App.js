@@ -1,28 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Hello from './Hello';
+import Chatbox from './components/Chatbox.js';
+import {Link} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Hello name="Ukko" zone="twilight"/>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: '',
+      items: []
+    };
+  }
+
+  onChange = (event) => {
+    this.setState({ term: event.target.value });
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault()
+    this.setState({
+      term: '',
+      items: [...this.state.items, this.state.term]
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Chat app</h1>
+
+        {this.props.user &&
+          <div className="allow-chat">
+             <Chatbox items={this.state.items} />
+             <form className="message-form" onSubmit={this.onSubmit}>
+             <input value={this.state.term} onChange={this.onChange} />
+             <button>Send</button>
+             </form>
+          </div>
+        }
+        {!this.props.user &&
+          <div className="disallow-chat">
+            <p><Link to="/login">Login</Link> or <Link to="/register">Register</Link> to start chatting!</p>¨
+          </div>
+        }
+      </div>
+    );
+  }
 }
 
 export default App;
