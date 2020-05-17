@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 class Login extends React.Component{
     constructor(props){
         super(props);
@@ -21,9 +23,9 @@ class Login extends React.Component{
                     {error && <p className="error-message">{error.message}</p>}
                    <form onSubmit={this.handleSubmit}>
                          
-                         <label htmlFor="email">Email address</label>
+                         <label htmlFor="email">Email address </label>
                          <input type="text" name="email" id="email" value={email} onChange={this.handleChange}></input>
-                         <label htmlFor="password">password</label>
+                         <label htmlFor="password">password </label>
                          <input
                              type="password"
                              name="password"
@@ -31,7 +33,7 @@ class Login extends React.Component{
                              value={password}
                              onChange={this.handleChange}>
                          </input>
-                         <button className="submit">Login</button>
+                         <button variant="info" className="submit">Login</button>
                          <p>Don't have an account?<Link className="login-btn" to="/register">Register here</Link></p>
                     </form>
                 </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import firebase from '../firebase.js';
 import { Link } from 'react-router-dom';
 import Login from './Login';
+import Button from 'react-bootstrap/Button';
+
 class Register extends React.Component{
     constructor(props){
         super(props);
@@ -53,7 +55,7 @@ class Register extends React.Component{
                     value={password}
                     onChange={this.handleChange}>
                 </input>
-                <button className="submit">Get started</button>
+                <button variant="info" className="submit">Get started</button>
                 <p>Already have an account? <Link className="login-btn" to="/login">Login here</Link></p>
             </form>
             </div>

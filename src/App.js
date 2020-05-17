@@ -3,6 +3,8 @@ import './App.css';
 import Chatbox from './components/Chatbox.js';
 import {Link} from 'react-router-dom';
 import firebase from './firebase';  
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 class App extends React.Component {
   constructor(props) {
