@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import firebase from '../firebase.js';
 
 class Login extends React.Component{
     constructor(props){
@@ -14,6 +14,17 @@ class Login extends React.Component{
     handleChange = e => {
         this.setState({[e.target.name]: e.target.value});
     }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        const {email, password} = this.state;
+        firebase.auth().signInWithEmailAndPassword(email, password).then(() =>{
+            this.props.history.push('/');
+        })
+        .catch(error =>{
+            this.setState({error});
+        });
+    }
     render(){
             const {email, password, error} = this.state;
             return(
@@ -23,9 +34,11 @@ class Login extends React.Component{
                     {error && <p className="error-message">{error.message}</p>}
                    <form onSubmit={this.handleSubmit}>
                          
-                         <label htmlFor="email">Email address </label>
+                         <label htmlFor="email">Email address</label>
                          <input type="text" name="email" id="email" value={email} onChange={this.handleChange}></input>
-                         <label htmlFor="password">password </label>
+                         <br></br>
+                         <br></br>
+                         <label htmlFor="password">password</label>
                          <input
                              type="password"
                              name="password"
@@ -33,7 +46,9 @@ class Login extends React.Component{
                              value={password}
                              onChange={this.handleChange}>
                          </input>
-                         <button variant="info" className="submit">Login</button>
+                         <br></br>
+                         <br></br>
+                         <button className="submit">Login</button>
                          <p>Don't have an account?<Link className="login-btn" to="/register">Register here</Link></p>
                     </form>
                 </div>

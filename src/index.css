@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -12,22 +13,64 @@ code {
     monospace;
 }
 
+label {
+  color: white;
+  margin: 1vw;
+}
+
+.app {
+  background-color: #282c34;
+  height: 1080px;
+  width: 100%;
+  background-image: url(./bg.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
 .main-nav{
   text-align: right;
-  text-decoration: aliceblue;
   margin-bottom: 50px;
   padding: 0 25px;
+  background-color: #282c34;
+}
+.topnav-btn {
+  background-color: #282c34;
+  border: none;
+  text-decoration: none;
+  
+}
+
+.p-5{
+  padding: 10vw !important;
+  background-color: #282c34;
+}
+
+.mt-5{
+  padding: 10vw !important;
+  background-color: #282c34;
+}
+
+.submit {
+  background-color:white;
+  border: #191b1f;
+  margin: 1vw;
+}
+
+.home-btn {
+  background-color: #282c34;
+  border: none;
+  justify-items: left;
 }
 
 a {
-  color: #3d8fac;
+  color: white !important;
   text-decoration: none;
   transition: all .25s ease;
 }
 
 a:hover {
-  color: #5d8cae;
-  text-decoration: underline;
+  color: white !important;
+  text-decoration: none;
 }
 
 .main-nav a {

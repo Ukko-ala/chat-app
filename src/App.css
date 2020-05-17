@@ -32,6 +32,52 @@
 .auth-container {
   margin-right: 50px;
   margin-left: 50px;
+  background-color: #282c34;
+  padding: 25px;
+  text-decoration: white;
+}
+
+.chatbox{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  align-items: center;
+  padding: 3vw;
+}
+
+.app ul li {
+  align-items: center;
+  text-align: left;
+  list-style-type: none;
+  background-color: white;
+  margin: 1vw;
+  max-width: 15vw;
+  padding: 1vw;
+  font-size: 0,2vw;
+  border-radius: 15px;
+}
+
+a {
+  color: white !important;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+  font-weight: bolder;
+}
+
+p {
+  color: white;
+}
+
+a:hover {
+  color: white !important;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {

@@ -8,7 +8,6 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import firebase, {auth, provider} from './firebase.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 
 class AppRouter extends React.Component{
   constructor(props) {
@@ -31,18 +30,18 @@ class AppRouter extends React.Component{
       <Router>
         <div className="app">
           <nav className="main-nav">
+            <h2>Chat App</h2>
             {!this.state.user &&
               <div>
-                  <Button variant="dark" class="topnav-btn">
+                  <button class="home-btn">
+                  <Link to="/">Home</Link>
+                  </button>
+                  <button class="topnav-btn">
                   <Link to="/login">Login</Link>
-                  </Button>
-                  <Button variant="dark" class="topnav-btn">
+                  </button>
+                  <button class="topnav-btn">
                   <Link to="/register">Register</Link>
-                  </Button>
-                  <Button variant="dark" class="topnav-btn">
-                  <Link to="/">
-                   Home</Link>
-                   </Button>
+                  </button>
               </div>
             }
             {this.state.user &&

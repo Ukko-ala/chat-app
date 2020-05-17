@@ -23,9 +23,9 @@ class App extends React.Component {
     if(this.state.message !== ''){
       const chatRef = firebase.database().ref('general');
       const chat = {
-        message: this.state.message,
-        user: this.props.user.displayName,
-        timestamp: new Date().getTime()
+        message: this.state.message ,
+        user: this.props.user.displayName ,
+        timestamp: new Date().getTime() 
       }
 
        chatRef.push(chat);
@@ -35,7 +35,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div Class="App container mt-5 mp-5">
         <h1>Chat app</h1>
         {this.props.user &&
           <div className="allow-chat">
@@ -54,7 +54,9 @@ class App extends React.Component {
         }
         {!this.props.user &&
           <div className="disallow-chat">
-            <p><Link to="/login">Login</Link> or <Link to="/register">Register</Link> to start chatting!</p>¨
+            <div className="topnav">
+            <p><Link to="/login">Login</Link> or <Link to="/register">Register</Link> to start chatting!</p>
+            </div>
           </div>
         }
       </div>
