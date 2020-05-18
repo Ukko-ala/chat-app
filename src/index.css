@@ -43,11 +43,15 @@ label {
 .p-5{
   padding: 10vw !important;
   background-color: #282c34;
+  align-self: center;
+  max-height: 50%;
 }
 
 .mt-5{
   padding: 10vw !important;
   background-color: #282c34;
+  align-self: center;
+  max-height: 80%;
 }
 
 .submit {
